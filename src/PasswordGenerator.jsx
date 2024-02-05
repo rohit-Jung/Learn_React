@@ -1,4 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 function PasswordGenerator() {
   //useState Hooks to tell react when to change things in UI
@@ -6,6 +8,7 @@ function PasswordGenerator() {
   const [Length, setLength] = useState(8);
   const [NumAllow, setNumAllow] = useState(false);
   const [CharAllow, setCharAllow] = useState(false);
+  const [Eye, setEye] = useState(false);
 
   //useCallback Hook is used here so that the code is being optimized whenever the dependencies are changed. This is done by react itself. Memorization of code according to the dependencies are done here.
   const PasswordGenerator = useCallback(() => {
@@ -40,24 +43,37 @@ function PasswordGenerator() {
     PasswordGenerator();
   }, [Length, NumAllow, CharAllow, PasswordGenerator]);
 
+  //toggle password visibility to show and hide password
+  const togglePasswordVisibility = () => {
+    setEye((prev) => !prev);
+  };
+
   return (
     <>
       <div className="w-full h-auto bg-zinc-600 p-5 mt-5 flex items-center justify-center flex-col gap-4">
         <h1 className="text-center text-3xl font-bold text-transform: uppercase">
           Password Generator
         </h1>
-        <div className="flex gap-3">
+        <div className="flex">
             <input
-                type="text"
+                type= {Eye ? "text" : "password"} 
                 value={Password}
-                className="outline-none py-1 px-3 min-w-80 rounded text-black font-semibold"
+                className="outline-none py-1 px-3 min-w-80 text-black font-semibold rounded-l-md"
                 placeholder="Password"
                 readOnly
                 //referance is passed with the help of constant it is stored in
                 ref={passwordRef}
                 />
+
+          {/* added eyeicon to toggle visibility of password */}
+           <button onClick={togglePasswordVisibility}
+           className="outline-none bg-white text-black px-3 py-1 shrink-0">
+             {/* //imported eye icon from fontawesome using npm install --save @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons */}
+             <FontAwesomeIcon icon={Eye ? faEyeSlash : faEye} />
+          </button>
+
             <button
-                className="outline-none bg-blue-700 text-white px-3 py-1 shrink-0 rounded"
+                className="outline-none bg-blue-700 text-white px-3 py-1 shrink-0 rounded-r-md"
                 //calling fnc to copy the text as the button is clicked
                 onClick={copyToClipboard}
                 >
