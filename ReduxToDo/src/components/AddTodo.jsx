@@ -9,11 +9,12 @@ function AddTodo() {
   const addTodoHandler = (e) => {
     e.preventDefault();
     if (!input.trim()) {
-      alert("Please enter a todo...");
+      alert("Please enter a todo...");//alert for empty todo
       return;
     }
-
+    //dispatching the addTodo reducer as the user submits form
     dispatch(addTodo(input));
+    //cleaning up the input field afterwards
     setInput("");
   };
 
@@ -24,6 +25,7 @@ function AddTodo() {
         className="bg-gray-800 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
         placeholder="Enter a Todo..."
         value={input}
+        //updating the state with the value written on the field
         onChange={(e) => setInput(e.target.value)}
       />
       <button
