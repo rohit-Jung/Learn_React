@@ -9,12 +9,12 @@ export default function ProtectedLayout({ children, authenticated = true }) {
 
   useEffect(() => {
     if (authenticated && authStatus !== authenticated) {
-      navigate('/login');
-    } elseif(!authenticated && authStatus !== authenticated) {
-      navigate('/');
+      navigate("/login");
+    } else if (!authenticated && authStatus !== authenticated) {
+      navigate("/");
     }
     setLoader(false);
   }, [authenticated, authStatus, navigate]);
 
-  return loader ? <h1>Loading....</h1>: {children};
+  return loader ? <h1>Loading....</h1> : <>{children}</>;
 }
