@@ -20,7 +20,7 @@ export class AuthService {
       );
       if (userAccount) {
         //TO directly login after register
-        this.login(email, password);
+        this.login({email, password});
       } else {
         return userAccount;
       }

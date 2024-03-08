@@ -90,6 +90,7 @@ function PostForm({ post }) {
               shouldValidate: true,
             });
           }}
+          
         />
         <RealTimeEditor
           label="Content :"
@@ -109,7 +110,7 @@ function PostForm({ post }) {
         {post && (
           <div className="w-full mb-4">
             <img
-              src={appwriteService.getFilePreview(post.featuredImage)}
+              src={appwriteService.previewFile(post.featuredImage)}
               alt={post.title}
               className="rounded-lg"
             />

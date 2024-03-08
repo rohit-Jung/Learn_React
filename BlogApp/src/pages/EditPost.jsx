@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import appwriteService from "../appwrite/config.service";
-import { Container, PostCard } from "../components";
+import { Container, PostForm } from "../components";
 
 function EditPost() {
   const [post, setPost] = useState(null);
@@ -22,9 +22,8 @@ function EditPost() {
 
   return (
     <div>
-      <Container>
-        <PostCard post={post} />
-      </Container>
+      <Container>{post && <PostForm post={post} />}</Container>
+      {/* Conditional rendering because the post details wasn't being displayed */}
     </div>
   );
 }
