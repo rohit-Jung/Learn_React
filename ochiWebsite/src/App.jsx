@@ -1,18 +1,28 @@
-import AboutPage from "./components/AboutPage";
-import Eyes from "./components/Eyes";
-import LandingPage from "./components/LandingPage";
-import Marquee from "./components/Marquee";
-import Navbar from "./components/Navbar";
+import {
+  Navbar,
+  LandingPage,
+  Marquee,
+  AboutPage,
+  Eyes,
+  Featured,
+  Cards,
+  Footer,
+} from "./components";
+import LocomotiveScroll from "locomotive-scroll";
 
 function App() {
+  const locomotiveScroll = new LocomotiveScroll();
   return (
     <div>
-      <div className="w-full bg-[#F1F1F1] relative">
+      <div className="w-full  relative">
         <Navbar />
         <LandingPage />
         <Marquee />
         <AboutPage />
         <Eyes />
+        <Featured />
+        <Cards />
+        <Footer />
       </div>
     </div>
   );

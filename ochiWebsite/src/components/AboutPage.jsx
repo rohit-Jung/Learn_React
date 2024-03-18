@@ -2,7 +2,12 @@ import React from "react";
 
 function AboutPage() {
   return (
-    <div className="bg-[#CDEA68] w-full font-['Neue_Montreal_Regular']  rounded-tl-2xl rounded-tr-2xl">
+    <div
+      data-scroll
+      data-scroll-section
+      data-scroll-speed="-.001"
+      className="bg-[#CDEA68] w-full font-['Neue_Montreal_Regular']  rounded-tl-2xl rounded-tr-2xl"
+    >
       <div className="w-[90%] text-[3.6vw] leading-none mb-16  px-14 pt-[4.6rem]">
         <p>
           Ochi is a strategic partner for fast-growing tech businesses that need

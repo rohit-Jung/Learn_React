@@ -1,9 +1,15 @@
+import { easeInOut, motion } from "framer-motion";
 import React from "react";
 import { MdArrowOutward } from "react-icons/md";
 
 function LandingPage() {
   return (
-    <div className="h-screen w-full pt-32">
+    <div
+      data-scroll
+      data-scroll-section
+      data-scroll-speed="-.3"
+      className="h-screen w-full pt-32"
+    >
       <div className="font-['Founders_Grotesk_X'] text-[8.5vw] font-semibold w-full px-14 py-16 leading-[6.5vw] ">
         {["we create", "eye-opening", "presentations"].map((item, index) => (
           <div
@@ -11,7 +17,12 @@ function LandingPage() {
             className="w-full uppercase flex items-stretch flex-grow-3"
           >
             {index == 1 && (
-              <div className="w-[8.3vw] h-[5.6vw] bg-red-500 mr-3 relative -top-[1.25vw] rounded-md"></div>
+              <motion.div
+                initial={{ width: 0 }}
+                animate={{ width: "8.3vw" }}
+                transition={{ duration: 0.8, ease: easeInOut }}
+                className="w-[8.3vw] h-[5.6vw] bg-red-500 mr-3 relative -top-[1.25vw] rounded-md"
+              ></motion.div>
             )}
             {item}
           </div>
