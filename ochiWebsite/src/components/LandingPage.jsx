@@ -7,7 +7,7 @@ function LandingPage() {
     <div
       data-scroll
       data-scroll-section
-      data-scroll-speed="-.3"
+      data-scroll-speed="-.6"
       className="h-screen w-full pt-32"
     >
       <div className="font-['Founders_Grotesk_X'] text-[8.5vw] font-semibold w-full px-14 py-16 leading-[6.5vw] ">

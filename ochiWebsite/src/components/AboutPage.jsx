@@ -5,7 +5,7 @@ function AboutPage() {
     <div
       data-scroll
       data-scroll-section
-      data-scroll-speed="-.001"
+      data-scroll-speed="-.1"
       className="bg-[#CDEA68] w-full font-['Neue_Montreal_Regular']  rounded-tl-2xl rounded-tr-2xl"
     >
       <div className="w-[90%] text-[3.6vw] leading-none mb-16  px-14 pt-[4.6rem]">
